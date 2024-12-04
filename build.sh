@@ -5,13 +5,11 @@ source /opt/buildpiper/shell-functions/str-functions.sh
 source /opt/buildpiper/shell-functions/file-functions.sh
 source /opt/buildpiper/shell-functions/aws-functions.sh
 
-TAG=$(tail -n 1 data.properties)
-
-
 CODEBASE_LOCATION="${WORKSPACE}"/"${CODEBASE_DIR}"
 logInfoMessage "I'll do processing at [$CODEBASE_LOCATION]"
 sleep  $SLEEP_DURATION
 cd  "${WORKSPACE}"
+TAG=$(tail -n 1 data.properties)
 logInfoMessage "I'll zip the following [$CODEBASE_DIR]"
 rm -rf "${CODEBASE_DIR}"/.git
 zip -r "${CODEBASE_DIR}"-"${TAG}".zip "${CODEBASE_DIR}"
