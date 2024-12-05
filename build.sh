@@ -12,7 +12,8 @@ cd  "${WORKSPACE}"
 TAG=$(tail -n 1 data.properties)
 logInfoMessage "I'll zip the following [$CODEBASE_DIR]"
 rm -rf "${CODEBASE_DIR}"/.git
-zip -r "${CODEBASE_DIR}"-"${TAG}".zip "${CODEBASE_DIR}"
+logInfoMessage "Zip File: ${CODEBASE_DIR}-${TAG}.zip"
+zip -qr "${CODEBASE_DIR}"-"${TAG}".zip "${CODEBASE_DIR}"
 
 TASK_STATUS=$?
 saveTaskStatus ${TASK_STATUS} ${ACTIVITY_SUB_TASK_CODE}
