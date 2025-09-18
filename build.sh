@@ -23,8 +23,8 @@ fi
 logInfoMessage "I'll zip the following [$SOURCE_DIR_PATH]"
 cd "$BASE_DIR" || { logErrorMessage "Failed to cd into $BASE_DIR"; exit 1; }
 ls
-logInfoMessage "zip -r ${ZIP_NAME}.zip ."
-zip -r "${ZIP_NAME}.zip" .
+logInfoMessage "zip -r ${ZIP_NAME}-${V3_EXECUTION_ID}.zip ."
+zip -r "zip -r ${ZIP_NAME}-${V3_EXECUTION_ID}.zip ." .
 TASK_STATUS=$?
 
 saveTaskStatus ${TASK_STATUS} ${ACTIVITY_SUB_TASK_CODE}
